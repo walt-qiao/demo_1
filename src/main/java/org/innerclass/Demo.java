@@ -1,10 +1,13 @@
 package org.innerclass;
 
-public class Demo {
+public class Demo extends Demp2 {
+
     public static void main(String[] args) {
-        new Inter() {
+
+        new Inter(){
+            @Override
             public void eat() {
-                System.out.println("123");
+
             }
         }.eat();
 
