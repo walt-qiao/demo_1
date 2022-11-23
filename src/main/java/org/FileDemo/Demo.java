@@ -16,5 +16,8 @@ public class Demo {
         File file = new File("C:/Users/XM/Desktop/demo");
         //createTempFile 根据提供的前缀后缀向给定的路径添加一个文件
         File tempFile = File.createTempFile("demo1", "txt", file);
+        boolean newFile = tempFile.createNewFile();
+        System.out.println(newFile);
+        System.out.println(tempFile);
     }
 }
