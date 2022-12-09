@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class Demo {
     public static void main(String[] args) throws IOException{
-        int i = 8+8*(8-(8/8));
+        int i =1024/8;
         System.out.println(i);
 
         /*File file = new File("src");
