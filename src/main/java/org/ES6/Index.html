@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6练习</title>
+
+</head>
+<body>
+<script>
+    /*let 只有在当前代码块有效*/
+    for (let i = 0; i < 5; i++) {
+        console.log(i)
+    }
+   /* console.log("循环之外："+i)*/
+    <!--const 表示常量，值不能被修改-->
+    const con = "abc";
+    console.log(con)
+    /*con="sss"*/
+
+    let str = "hello heima";
+    console.log(str,"中是否包含了heima",str.includes("heima"))
+
+    /*数组的解构*/
+    let arr = [1,2,3];
+    let [x,y,z] = arr;
+    console.log(x,y,z);
+    console.log(x,y);
+
+    /*对象的解构*/
+    const preson = {
+        name:"walt",
+        age:21,
+        language:['java','js','css']
+    };
+
+    let {name,age,language} = preson;
+    console.log(name,age,language);
+    let {name:n,age:a,language:l} = preson;
+    console.log(name,age,language);
+    console.log("别名打印:",n,a,l)
+    console.log(preson)
+    /*参数默认值*/
+    function add(a,b = 1){
+        return a+b
+    }
+    console.log(add(12,5))
+
+    /*箭头函数*/
+
+    function fun(a,b = 1) {
+        console.log(a+b)
+    }
+    fun(1)
+
+    let add2 = (a,b) =>{
+        return a+b
+    }
+    console.log(add(1,5))
+
+    let add3 = (a,b) => console.log(a+b)
+    add3(1,8)
+
+    /*新特性：函数优化*/
+
+    const preson2 = {
+        name: "jack",
+        age: 21,
+        eat:function (food) {
+            console.log(this.name,"在吃",food)
+        },
+        eat2:food => console.log(preson2.name,"在吃",food),
+        eat3(food){
+            console.log(this.name,"在吃",food)
+        }
+    }
+    preson2.eat("西瓜");
+    preson2.eat2("冬瓜");
+    preson2.eat3("南瓜");
+    let fun2 = () =>console.log("hello");
+    fun2()
+    let fun3 = ({name:n}) =>console.log("你好,"+n);
+    fun3(preson2)
+    /*map和reduce方法*/
+    let arr2 = ['1','2','3','4','5'];
+    let newArr = arr2.map(s=>parseInt(s))
+    console.log(newArr)
+
+    let arr3 = [1,23,21,8];
+    let newArr3 = arr3.reduce((a,b)=>a+b);
+    console.log(newArr3)
+
+</script>
+</body>
+</html>
